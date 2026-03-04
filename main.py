@@ -9,4 +9,4 @@ def home():
 
 @app.get("/twll")
 async def twll(url: str):
-    return "url"
+    return url
