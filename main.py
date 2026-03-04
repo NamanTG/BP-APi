@@ -7,6 +7,6 @@ app = FastAPI()
 def home():
     return {"status": "ok"}
 
-@app.get("/title")
-async def get_title(url: str):
-    return "hello"
+@app.get("/twll")
+async def twll(url: str):
+    return "url"
