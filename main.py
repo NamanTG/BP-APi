@@ -11,4 +11,5 @@ def home():
 async def twll(url: str):
     s = ClientSession()
     r = await s.get(url, allow_redirects=False)
-    return await r.text()
+    h = r.headers.get('Location' , '')
+    return h
