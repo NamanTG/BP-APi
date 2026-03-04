@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from aiohttp import ClientSession
 
 
 app = FastAPI()
@@ -9,4 +10,6 @@ def home():
 
 @app.get("/twll")
 async def twll(url: str):
-    return url
+    s = ClientSession()
+    r = await s.get(url)
+    return await r.text()
